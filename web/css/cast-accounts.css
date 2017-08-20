@@ -1,0 +1,195 @@
+@CHARSET "UTF-8";
+
+.head {
+	background-color: #2D3037;
+	color: #FFFFFF;
+	height: 80px;
+	width: 100%;
+	line-height: 80px;
+}
+
+.title{
+    float: left;
+    font-size: 25px;
+    font-family: cursive;
+    font-style: italic;
+    padding-left: 30px;
+}
+
+.time-info{
+	float: right;
+    font-size: 16px;
+    padding-right: 20px;
+}
+
+.top-nav {
+	background-color: #FAFAFA;
+	color: #000000 !important;
+}
+
+.active-good{
+	background-color: #FFFF00;
+}
+
+.left-list{
+	width: 70%;
+	height: 600px;
+	float: left;
+}
+
+.table-list{
+	height: 500px;
+}
+
+.curr-statistic{
+	background-color: #F8F8F8;
+	height: 100px;
+	border-top: solid 1px #E6E6E6;
+}
+
+.good-info{
+	float: left;
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+.good-total{
+	height: 50px;
+	line-height: 50px;
+}
+.total-buy{
+	font-size: 25px;
+	padding: 0 20px;
+}
+
+.pay-money{
+	font-size: 20px;
+	color: #FF0000;
+}
+
+.discount-info{
+	height: 50px;
+	line-height: 50px;
+    text-align: right;
+}
+.pay-info{
+	margin-left: 300px;
+}
+
+.right-operator{
+	width: 30%;
+	height: 600px;
+	float: right;
+	background-color: #E9E9E9;
+}
+
+.operator-goods {
+	height: 200px;
+	border-bottom: 2px solid #E0e0e0;
+}
+
+.group-self {
+	width: 270px;
+	height: 95px;
+	margin: 45px 32px
+}
+.btn-self {
+    width: 90px;
+    height: 45px;
+}
+.btn-delgood{
+	border-bottom-right-radius:5px !important;
+	border-top-right-radius: 5px !important;
+}
+.btn-settle{
+	margin-top: 10px;
+	width: 270px;
+	height: 50px;
+	background-color: red;
+	color: white;
+	font-size: 30px;
+	border-bottom-left-radius: 4px !important;
+    border-top-left-radius: 5px !important;
+}
+
+.good-input{
+	padding: 10px 19px;
+}
+
+.good-input input{
+	height: 50px;
+    width: 300px;
+    border-radius: 5px;
+    border-bottom-style: outset;
+    border-right-style: outset;
+    font-size: 25px;
+}
+
+.clear{
+	clear: both;
+}
+
+.have-pay{
+	float: left;
+	line-height: 100px;
+	height: 100px;
+}
+.pay-money{
+	font-size:25px;
+}
+
+.last-pay {
+	margin-left: 140px;
+    height: 100px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.keyboard{
+	margin-top: 10px;
+}
+
+.grp-num-btn{
+	float: left;
+}
+
+.num-operator{
+	width: 65px;
+	float: right;
+}
+
+.button-num{
+	background-color: #F8F8F8;
+	color: #000000;
+    float: left;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    border: 1px solid #BEBEBE;
+    margin: 0px 13px 13px 0px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 8px #BEBEBE;
+    font-weight: 500;
+    font-size: 28px;
+}
+.button-zero {
+	width: 143px;
+}
+.button-point {
+	background-color: #646464;
+	color: #FFFFFF;
+	font-size: 35px;
+}
+.btn-del-self, .btn-confirm-self{
+    background-color: #646464;
+    color: #FFFFFF;
+    height: 143px;
+    margin-bottom: 13px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 43px;
+    padding-top: 29px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 8px #BEBEBE;
+}
