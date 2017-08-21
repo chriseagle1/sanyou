@@ -5,8 +5,8 @@
 <div class="wrap-self">
 	<div class="top-nav">
 		<ul class="nav nav-tabs nav-self">
-		  <li role="presentation" class="active"><a href="#">POS收银(F1)</a></li>
-		  <li role="presentation"><a href="#">商品管理(F3)</a></li>
+		  <li role="presentation" class="active"><a href="/cast-accounts/index">POS收银(F1)</a></li>
+		  <li role="presentation"><a href="/good-list/index">商品管理(F3)</a></li>
 		  <li role="presentation"><a href="#">后台(F5)</a></li>
 		</ul>
 	</div>

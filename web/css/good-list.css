@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+.head {
+	background-color: #2D3037;
+	color: #FFFFFF;
+	height: 80px;
+	width: 100%;
+	line-height: 80px;
+}
+
+.title{
+    float: left;
+    font-size: 25px;
+    font-family: cursive;
+    font-style: italic;
+    padding-left: 30px;
+}
+
+.time-info{
+	float: right;
+    font-size: 16px;
+    padding-right: 20px;
+}
+
+.add-good {
+	margin: 20px 0px;
+}
+
+.add-good button{
+	background-color: #82CE34 !important;
+    color: #FFFFFF !important;
+    width: 100px;
+    margin-top: 16px;
+    margin-left: 12px;
+}
+
+.self-add{
+    width: 35%;
+    float: left;
+    margin-right: 50px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+.good-remark {
+	width: 35%;
+	float: left;
+	margin: 5px 50px 10px 0px;
+}
+
+.clear{
+	clear: both;
+}
+
+.btn-file{
+    float: right;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
