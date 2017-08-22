@@ -5,8 +5,12 @@ use Yii;
 use yii\web\Controller;
 
 class UploadFileController extends Controller {
+    public $enableCsrfValidation = false;
+    
     public function actionAjaxUploader() {
         $file = $_FILES['uploadFileName'];
+        $uploadType = \yii::$app->request->get('uploadType', 'product');
+        
         if (empty($file['size'])) {
             $res= $this->ajax_response(0, '上传文件为空') ;
             $res->format= 'html';
@@ -31,18 +35,10 @@ class UploadFileController extends Controller {
         $fileName = md5($file['name'] . '#' . date('YmdHis') . '_' . rand(10000, 99999)) . '.' . $type;
         $filePath = \Yii::getAlias('@webroot') . '/attachs/' . $fileName;
         move_uploaded_file($file['tmp_name'], $filePath);
-        $type = 'xlsx';
-        $file_path = '';
         
-        if ($type == 'xlsx' || $type == 'xls') {
-            $reader = \PHPExcel_IOFactory::createReader('Excel2007'); // 读取 excel 文档
-        } else if ($type == 'csv') {
-            $reader = \PHPExcel_IOFactory::createReader('CSV'); // 读取 CSV 文档
-        } else {
-            die('Not supported file types!');
-        }
-        
-        $phpExcel = $reader->load($file_path);
-        $objWorksheet = $phpExcel->getActiveSheet();
+        $readSrvs = new \app\srvs\sanyou\ReadExcel();
+        $excelData = $readSrvs->readExcelData($filePath, $type);
+        var_dump($excelData);exit;
+        unset($filePath);
     }
 }

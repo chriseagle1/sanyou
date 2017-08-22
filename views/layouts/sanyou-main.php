@@ -16,7 +16,6 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <link href="/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <?php $this->head() ?>
 </head>
 <body>
@@ -30,6 +29,5 @@ AppAsset::register($this);
 
 <?php $this->endBody() ?>
 </body>
-<script type="text/javascript" src="/css/bootstrap/js/bootstrap.min.js"></script>
 </html>
 <?php $this->endPage() ?>

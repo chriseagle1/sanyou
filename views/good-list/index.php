@@ -42,12 +42,13 @@
 				<table class="table table-hover">
 				  <thead>
 				  	<th>序号</th><th>商品条码</th><th>商品名称</th><th>规格/单位</th>
-				  	<th>售价(￥)</th><th>数量</th><th>折扣</th><th>金额(￥)</th>
+				  	<th>售价(￥)</th><th>数量</th><th>折扣</th><th>备注</th>
 				  </thead>
 				  <tbody class="good-list">
-				  	<tr class="active-good">
-				  		<td>01</td><td>6901285991219</td><td>怡宝纯净水555ml</td><td> </td>
-				  		<td>0.00</td><td>1</td><td>0.00</td><td>0.00</td>
+				  	<tr class="active-good" v-for="product, index in productList">
+				  		<td>{{product.sort}}</td><td>{{product.no}}</td><td>{{product.name}}</td>
+				  		<td>{{product.specification}}/{{product.unit}}</td>
+				  		<td>{{product.sellPrice}}</td><td>{{product.number}}</td><td>{{product.discount}}</td><td>0.00</td>
 				  	</tr>
 				  </tbody>
 				</table>

@@ -1,4 +1,5 @@
-CREATE TABLE product(
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product`(
 	`id` INT(11) UNSIGNED NOT NULL auto_increment,
 	`product_no` VARCHAR(15) NOT NULL DEFAULT '',
 	`product_name` VARCHAR(100) NOT NULL DEFAULT '',
@@ -7,13 +8,15 @@ CREATE TABLE product(
   `specification` VARCHAR(30) NOT NULL DEFAULT '',
 	`retail_price` DECIMAL(7, 2) NOT NULL DEFAULT 0.00,
 	`vip_price` DECIMAL(7, 2) NOT NULL DEFAULT 0.00,
+	`remarks` TEXT,
 	`create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`),
 	UNIQUE INDEX `idx_prod_no` (`product_no`)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-CREATE TABLE product_stock(
+DROP TABLE IF EXISTS `product_stock`;
+CREATE TABLE `product_stock`(
 	`id` INT(11) UNSIGNED NOT NULL auto_increment,
 	`product_no` VARCHAR(15) NOT NULL DEFAULT '',
 	`stock` INT(5) UNSIGNED NOT NULL DEFAULT 0,
@@ -24,16 +27,35 @@ CREATE TABLE product_stock(
 	UNIQUE INDEX `idx_prod_no` (`product_no`)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-
+DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
 	`id` INT(11) UNSIGNED NOT NULL auto_increment,
 	`order_id` VARCHAR(64) NOT NULL DEFAULT '',
 	`order_time` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+	`status` TINYINT(4) NOT NULL DEFAULT 0,
+	`product_num` INT(11) NOT NULL DEFAULT 0,
+	`order_amount` DECIMAL(11, 2) NOT NULL DEFAULT 0.00,
 	`create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`),
+	UNIQUE INDEX `idx_order_id` (`order_id`)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-CREATE TABLE pay_list (
+DROP TABLE IF EXISTS `order_detail`;
+CREATE TABLE `order_detail`(
+	`id` INT(11) UNSIGNED NOT NULL auto_increment,
+	`order_id` VARCHAR(64) NOT NULL DEFAULT '',
+	`product_no` VARCHAR(15) NOT NULL DEFAULT '',
+	`product_num` INT(11) NOT NULL DEFAULT 0,
+	`product_amount` DECIMAL(11, 2) NOT NULL DEFAULT 0.00,
+	`profits` DECIMAL(11, 2) NOT NULL DEFAULT 0.00,
+	`create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `pay_list`;
+CREATE TABLE `pay_list` (
 	`id` INT(11) UNSIGNED NOT NULL auto_increment,
 	`trade_no` VARCHAR(64) NOT NULL DEFAULT '' COMMENT '支付宝交易号',
 	`out_trade_no` VARCHAR(64) NOT NULL DEFAULT '' COMMENT '商户订单号',
@@ -44,7 +66,7 @@ CREATE TABLE pay_list (
 	`point_amount` DECIMAL(11, 2) NOT NULL DEFAULT 0.00 COMMENT '使用积分宝付款的金额',
 	`invoice_amount` DECIMAL(11, 2) NOT NULL DEFAULT 0.00 COMMENT '交易中可给用户开具发票的金额',
 	`gmt_payment`	TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '交易支付时间',
-`fund_bill_list` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '交易支付使用的资金渠道',
+	`fund_bill_list` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '交易支付使用的资金渠道',
 	`card_balance` DECIMAL(11, 2) NOT NULL DEFAULT 0.00 COMMENT '支付宝卡余额',
 	`store_name` VARCHAR(512) NOT NULL DEFAULT '' COMMENT	'发生支付交易的商户门店名称',
 	`buyer_user_id`	VARCHAR(28)	NOT NULL DEFAULT '' COMMENT	'买家在支付宝的用户id',
