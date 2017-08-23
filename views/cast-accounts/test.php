@@ -1,5 +1,6 @@
 <div class="upload-batch">
-	<button class="btn btn-default btn-file" type="button">批量导入</button>
+	<button class="btn btn-default btn-file" type="button" data-type="product">批量导入</button>
+	<button class="btn btn-default" id="btn1" @click="layui12">say hello</button>
 </div>
 <div class="table-list">
 	<table class="table table-hover">

@@ -25,6 +25,7 @@ class AppAsset extends AssetBundle
         ['js/jquery.min.js', 'position' => 1],
         ['js/vue.min.js', 'position' => 1],
         'css/bootstrap/js/bootstrap.min.js',
+        'js/layer/layer.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

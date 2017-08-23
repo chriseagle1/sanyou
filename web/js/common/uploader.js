@@ -2,11 +2,13 @@
  * 
  */
 
+var uploadType = $('.btn-file').data('type');
+
 var importFile = new AjaxUpload('.btn-file', {
     action: "/ajax/common/upload-file/ajax-uploader",
     name: "uploadFileName",
     data: {
-    	uploadType: 'product'
+    	uploadType: uploadType
     },
     autoSubmit: true,
     responseType: 'json',
@@ -30,9 +32,9 @@ var importFile = new AjaxUpload('.btn-file', {
 
         var result = response.data;
         if (result.isSuccess) {
-        	
-
+        	layer.msg('导入成功', {time:1000});
         } else {
+
         }
     },
     onTimeout: function () {
