@@ -47,5 +47,5 @@ class CastAccountsController extends Controller
         
         return $this->render('test', ['test' => 11]);
     }
-
+    
 }

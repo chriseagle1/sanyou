@@ -9,7 +9,7 @@
 	  	<th>单价(￥)</th><th>数量</th><th>折扣</th><th>金额(￥)</th>
 	  </thead>
 	  <tbody class="good-list" id="buy-goods">
-  	     <tr :class="{activeGood:index==0}" v-for="good,index in goodList">
+  	     <tr :class="{activeGood:good.isActive}" v-for="good,index in goodList">
 	  	    <td>{{good.order}}</td><td>{{good.num}}</td><td>{{good.name}}</td><td>{{good.unit}}</td>
 	  		<td>{{good.price}}</td><td>{{good.quantity}}</td><td>{{good.discount}}</td><td>{{good.amount}}</td>
 	  	</tr>
