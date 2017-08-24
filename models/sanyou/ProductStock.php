@@ -22,9 +22,10 @@ class ProductStock extends ActiveRecord {
             return false;
         }
         $columns = array_keys($stock_infos[0]);
+        
         $prodSql = \Yii::$app->db->getQueryBuilder()->batchInsert(self::tableName(), $columns, $stock_infos);
         $sql = $prodSql . Tools::createDupUpdate($stock_infos);
-    
+        
         return $this->getDb()->createCommand($sql)->execute();
     }
 }

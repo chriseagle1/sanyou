@@ -29,7 +29,10 @@ class GoodListController extends Controller
      */
     public function actionIndex()
     {
-        \yii::$app->view->registerCssFile('/css/good-list.css', ['depends'=>  'app\assets\AppAsset']);
+        \yii::$app->view->registerCssFile('/css/good-list.css');
+        \yii::$app->view->registerJsFile('/js/sanyou/good-list.js');
+        \yii::$app->view->registerJsFile('/js/ajaxupload.js');
+        \yii::$app->view->registerJsFile('/js/common/uploader.js');
         $this->layout = 'sanyou-main';
         
         return $this->render('index');

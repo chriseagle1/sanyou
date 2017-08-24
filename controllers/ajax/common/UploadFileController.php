@@ -49,6 +49,7 @@ class UploadFileController extends AjaxController {
             
             return json_encode($res);
         } catch (\Exception $ex) {
+            var_dump($ex->getMessage());exit;
             \Yii::error($ex->getMessage(), 'error');
             $res= $this->ajaxResponse(1, '导入失败!') ;
             $res->format= 'html';
